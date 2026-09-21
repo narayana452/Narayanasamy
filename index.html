@@ -1,0 +1,628 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Dataset One-Hot Encoder using Decoder Logic</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="hero">
+    <div class="hero-content">
+        <p class="tag">EC2201 • DIGITAL SYSTEMS • AI DATASET APPLICATION</p>
+
+        <h1>AI Dataset One-Hot Encoder<br>using Decoder Logic</h1>
+
+        <p class="hero-description">
+            A practical software simulation demonstrating how decoder logic
+            can be used to generate one-hot encoded outputs for AI datasets.
+        </p>
+
+        <button class="start-btn" id="startBtn">
+            Start Project →
+        </button>
+    </div>
+</header>
+
+
+<main class="container">
+
+    <!-- STEP 1 -->
+    <section class="intro-grid">
+
+        <article class="info-card">
+            <div class="card-number">01</div>
+
+            <h2>Problem Statement</h2>
+
+            <p>
+                Design a software solution for the real-world scenario
+                represented by “AI Dataset One-Hot Encoder using Decoder Logic”,
+                using the specified digital-system concept and reproducible
+                synthetic data.
+            </p>
+
+            <button class="reveal-btn" data-target="solutionSection">
+                View Software Solution →
+            </button>
+        </article>
+
+
+        <article class="info-card hidden-section" id="solutionSection">
+            <div class="card-number">02</div>
+
+            <h2>Software Solution</h2>
+
+            <p>
+                Create category codes, implement decoder logic, generate
+                one-hot vectors, validate the results and compare them with
+                standard encoding.
+            </p>
+
+            <ul>
+                <li>Category code generation</li>
+                <li>Digital decoder implementation</li>
+                <li>One-hot vector generation</li>
+                <li>Validation</li>
+                <li>Standard encoding comparison</li>
+                <li>Normal and fault test cases</li>
+            </ul>
+
+            <button class="reveal-btn" data-target="softwareSection">
+                Enter Interactive Software →
+            </button>
+        </article>
+
+    </section>
+
+
+    <!-- ACTUAL SOFTWARE -->
+    <section class="hidden-section" id="softwareSection">
+
+        <section class="section-heading">
+            <span>01</span>
+            <div>
+                <h2>Interactive Software Solution</h2>
+                <p>
+                    Enter your own categories and dataset values.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- INPUT -->
+        <section class="panel">
+
+            <div class="panel-header">
+                <div>
+                    <h3>Live Dataset Input</h3>
+                    <p>
+                        The system works with data entered by the user.
+                    </p>
+                </div>
+
+                <span class="status-badge">LIVE INPUT</span>
+            </div>
+
+
+            <div class="input-area">
+
+                <label for="categories">
+                    Categories
+                </label>
+
+                <textarea
+                    id="categories"
+                    rows="3"
+                    placeholder="Example: Red, Green, Blue, Yellow"
+                >Red, Green, Blue, Yellow</textarea>
+
+                <p class="input-help">
+                    Enter unique categories separated by commas.
+                </p>
+
+
+                <label for="dataset">
+                    Dataset Values
+                </label>
+
+                <textarea
+                    id="dataset"
+                    rows="5"
+                    placeholder="Example: Red, Blue, Green, Red"
+                >Red, Blue, Green, Red, Yellow, Green, Blue, Red</textarea>
+
+                <p class="input-help">
+                    Enter values separated by commas, spaces or new lines.
+                </p>
+
+
+                <div class="button-row">
+
+                    <button
+                        type="button"
+                        id="encodeBtn"
+                        class="primary-btn"
+                    >
+                        Generate Encoding
+                    </button>
+
+                    <button
+                        type="button"
+                        id="clearBtn"
+                        class="secondary-btn"
+                    >
+                        Clear
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- STEP 2 -->
+        <section class="hidden-section" id="categorySection">
+
+            <section class="panel">
+
+                <div class="panel-header">
+                    <div>
+                        <h3>Category Codes</h3>
+                        <p>
+                            Each category receives a decimal and binary code.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="table-wrapper">
+                    <table id="categoryTable">
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Decimal Code</th>
+                                <th>Binary Code</th>
+                                <th>Decoder Output</th>
+                            </tr>
+                        </thead>
+
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+                <button
+                    class="reveal-btn next-btn"
+                    data-target="decoderSection"
+                >
+                    Next: Decoder Logic →
+                </button>
+
+            </section>
+
+        </section>
+
+
+        <!-- STEP 3 -->
+        <section class="hidden-section" id="decoderSection">
+
+            <section class="panel">
+
+                <div class="panel-header">
+                    <div>
+                        <h3>Digital Decoder Logic</h3>
+                        <p>
+                            The binary code activates exactly one decoder output.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="decoder-container">
+
+                    <div class="decoder-input">
+                        <h4>Binary Input</h4>
+
+                        <div
+                            id="binaryInputDisplay"
+                            class="binary-display"
+                        >
+                            -
+                        </div>
+                    </div>
+
+
+                    <div class="decoder-arrow">→</div>
+
+
+                    <div class="decoder-box">
+
+                        <div class="decoder-symbol">
+                            DECODER
+                        </div>
+
+                        <div class="decoder-label">
+                            n-to-2ⁿ Digital Logic
+                        </div>
+
+                    </div>
+
+
+                    <div class="decoder-arrow">→</div>
+
+
+                    <div class="decoder-output">
+
+                        <h4>One-Hot Output</h4>
+
+                        <div
+                            id="decoderOutputDisplay"
+                            class="binary-display"
+                        >
+                            -
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <h4 class="truth-table-title">
+                    Decoder Truth Table
+                </h4>
+
+
+                <div class="table-wrapper">
+
+                    <table id="decoderTruthTable">
+
+                        <thead>
+                            <tr>
+                                <th>Input Code</th>
+                                <th>Decimal</th>
+                                <th>Active Output</th>
+                                <th>One-Hot Output</th>
+                            </tr>
+                        </thead>
+
+                        <tbody></tbody>
+
+                    </table>
+
+                </div>
+
+
+                <button
+                    class="reveal-btn next-btn"
+                    data-target="resultSection"
+                >
+                    Next: One-Hot Encoding →
+                </button>
+
+            </section>
+
+        </section>
+
+
+        <!-- STEP 4 -->
+        <section class="hidden-section" id="resultSection">
+
+            <section class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h3>Live One-Hot Encoding</h3>
+
+                        <p>
+                            Your dataset is converted using decoder logic.
+                        </p>
+                    </div>
+
+                    <span
+                        id="resultStatus"
+                        class="status-badge"
+                    >
+                        WAITING
+                    </span>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table id="resultTable">
+
+                        <thead>
+
+                            <tr>
+                                <th>#</th>
+                                <th>Input Value</th>
+                                <th>Category Code</th>
+                                <th>Decoder Output</th>
+                                <th>Standard Encoding</th>
+                                <th>Validation</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody></tbody>
+
+                    </table>
+
+                </div>
+
+
+                <button
+                    class="reveal-btn next-btn"
+                    data-target="validationSection"
+                >
+                    Next: Validation Report →
+                </button>
+
+            </section>
+
+        </section>
+
+
+        <!-- STEP 5 -->
+        <section class="hidden-section" id="validationSection">
+
+            <section class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h3>Validation Report</h3>
+
+                        <p>
+                            Decoder-based encoding is compared with
+                            standard one-hot encoding.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="statistics-grid">
+
+                    <div class="stat-card">
+                        <span>Total Inputs</span>
+                        <strong id="totalInputs">0</strong>
+                    </div>
+
+                    <div class="stat-card">
+                        <span>Valid Cases</span>
+                        <strong id="validCases">0</strong>
+                    </div>
+
+                    <div class="stat-card">
+                        <span>Fault Cases</span>
+                        <strong id="faultCases">0</strong>
+                    </div>
+
+                    <div class="stat-card">
+                        <span>Accuracy</span>
+                        <strong id="accuracy">0%</strong>
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="validationMessage"
+                    class="validation-box"
+                >
+                    Waiting for validation.
+                </div>
+
+
+                <button
+                    class="reveal-btn next-btn"
+                    data-target="testSection"
+                >
+                    Next: Test Cases →
+                </button>
+
+            </section>
+
+        </section>
+
+
+        <!-- STEP 6 -->
+        <section class="hidden-section" id="testSection">
+
+            <section class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h3>Test Case Validation</h3>
+
+                        <p>
+                            10 normal cases and 5 edge/fault cases.
+                        </p>
+                    </div>
+
+                    <button
+                        type="button"
+                        id="runTestsBtn"
+                        class="secondary-btn"
+                    >
+                        Run Test Cases
+                    </button>
+
+                </div>
+
+
+                <div class="test-summary">
+
+                    <div>
+                        <span>Normal Tests</span>
+                        <strong>10</strong>
+                    </div>
+
+                    <div>
+                        <span>Edge / Fault Tests</span>
+                        <strong>5</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table id="testTable">
+
+                        <thead>
+
+                            <tr>
+                                <th>Test</th>
+                                <th>Type</th>
+                                <th>Input</th>
+                                <th>Expected</th>
+                                <th>Result</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody></tbody>
+
+                    </table>
+
+                </div>
+
+
+                <button
+                    class="reveal-btn next-btn"
+                    data-target="flowSection"
+                >
+                    Next: Processing Flow →
+                </button>
+
+            </section>
+
+        </section>
+
+
+        <!-- STEP 7 -->
+        <section class="hidden-section" id="flowSection">
+
+            <section class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h3>Processing Flow</h3>
+
+                        <p>
+                            Complete digital logic and AI data processing flow.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="flow">
+
+                    <div class="flow-step">
+                        <span>1</span>
+                        <h4>Dataset Value</h4>
+                        <p>Categorical input</p>
+                    </div>
+
+                    <div class="flow-line">→</div>
+
+                    <div class="flow-step">
+                        <span>2</span>
+                        <h4>Category Code</h4>
+                        <p>Binary representation</p>
+                    </div>
+
+                    <div class="flow-line">→</div>
+
+                    <div class="flow-step">
+                        <span>3</span>
+                        <h4>Decoder</h4>
+                        <p>Digital logic</p>
+                    </div>
+
+                    <div class="flow-line">→</div>
+
+                    <div class="flow-step">
+                        <span>4</span>
+                        <h4>One-Hot Vector</h4>
+                        <p>Single active bit</p>
+                    </div>
+
+                    <div class="flow-line">→</div>
+
+                    <div class="flow-step">
+                        <span>5</span>
+                        <h4>Validation</h4>
+                        <p>Standard comparison</p>
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="reveal-btn next-btn"
+                    data-target="learningSection"
+                >
+                    Next: Student Learning Platform →
+                </button>
+
+            </section>
+
+        </section>
+
+
+        <!-- FINAL -->
+        <section
+            class="learning-section hidden-section"
+            id="learningSection"
+        >
+
+            <div class="learning-content">
+
+                <p class="tag">INTERACTIVE LEARNING</p>
+
+                <h2>Students Learning Platform</h2>
+
+                <p>
+                    Explore encoder and decoder concepts through the
+                    interactive Digital Electronics learning platform.
+                </p>
+
+                <a
+                    href="https://narayana452.github.io/encoder-decoder/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="learning-btn"
+                >
+                    Open Students Learning Platform →
+                </a>
+
+            </div>
+
+        </section>
+
+    </section>
+
+</main>
+
+
+<footer>
+    <p>AI Dataset One-Hot Encoder using Decoder Logic</p>
+    <p>EC2201 Digital Systems • Interactive Software Simulation</p>
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
